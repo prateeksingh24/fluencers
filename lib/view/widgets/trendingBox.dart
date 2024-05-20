@@ -69,24 +69,31 @@ class _TrendingBoxState extends State<TrendingBox> {
               Positioned(
                 bottom: 0,
                 child:Container(
-                  padding: EdgeInsets.all(8),
+                  padding: EdgeInsets.all(5),
                   height: 50,
                 width: 150,
                 decoration: BoxDecoration(
                   color: AppColor.kMain,
+                  borderRadius: BorderRadius.only(bottomRight:Radius.circular(10),bottomLeft: Radius.circular(10) )
                 ),
                 child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("@rishita",style: TextStyle(
+                        Text("@Rufia",style: TextStyle(
+                          fontSize: 13,
                             color: AppColor.kAccent
                         ),),
                         Iconify(SimpleIcons.instagram,size: 17,color: AppColor.kAccent,),
 
                       ],
-                    )
+                    ),
+                    Text("Lucknow",style: TextStyle(
+                        color: AppColor.kAccent
+                    ),),
+
                   ],
                 ) ,
               ) ,)

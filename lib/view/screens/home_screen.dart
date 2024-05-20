@@ -1,11 +1,14 @@
 import 'package:banner_carousel/banner_carousel.dart';
-import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
+
 import 'package:fluencers/AppColor.dart';
 import 'package:fluencers/models/bannerModel.dart';
+import 'package:fluencers/view/widgets/banner.dart';
+import 'package:fluencers/view/widgets/influencerAnalyticsBox.dart';
 import 'package:fluencers/view/widgets/searchBar.dart';
 import 'package:fluencers/view/widgets/trendingBox.dart';
 import 'package:flutter/material.dart';
-import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
+
+import 'package:iconify_flutter/icons/simple_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
               child: SearchInput(
                   textController: searchController,
                   hintText: "Search Influencers....."),
@@ -66,11 +69,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text("Trending",style: TextStyle(
-                color: AppColor.kMain,
-                fontSize: 19,
-                fontWeight: FontWeight.w800,
-              ),),
+              child: Text(
+                "Trending",
+                style: TextStyle(
+                  color: AppColor.kMain,
+                  fontSize: 19,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
             ),
             // FanCarouselImageSlider(
             //   sliderHeight: 380,
@@ -79,21 +85,91 @@ class _HomeScreenState extends State<HomeScreen> {
             //   isAssets: false,
             //
             // ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
-
-              width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
                 height: 200,
-                child: TrendingBox()),
+                child: const TrendingBox()),
 
+            const SizedBox(
+              height: 10,
+            ),
+
+            const BannerBox(),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                "Top Influencer",
+                style: TextStyle(
+                  color: AppColor.kMain,
+                  fontSize: 19,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                child: const TrendingBox()),
+            const SizedBox(
+              height: 10,
+            ),
+            const BannerBox(),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                "Influencer Analytics",
+                style: TextStyle(
+                  color: AppColor.kMain,
+                  fontSize: 19,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+
+            Padding(
+              padding:  EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+              child: Column(
+
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InfluencerAnalyticsBox(name: "Instagram", icon: SimpleIcons.instagram ),
+                       InfluencerAnalyticsBox(name: "Youtube", icon: SimpleIcons.youtube ),
+
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InfluencerAnalyticsBox(name: "Twitter", icon: SimpleIcons.twitter ),
+                      InfluencerAnalyticsBox(name: "TikTok", icon: SimpleIcons.tiktok ),
+
+                    ],
+                  ),
+
+                ],
+              ),
+            )
           ],
-
-
         ),
       ),
-
     );
   }
 }

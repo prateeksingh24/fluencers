@@ -41,6 +41,7 @@ dependencies:
   animated_bottom_navigation_bar: ^1.3.3
   social_media_buttons:
   iconify_flutter: ^0.0.5
+  curved_labeled_navigation_bar: ^2.0.2
 
 
 dev_dependencies:
