@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../AppColor.dart';
 import '../../models/SponsorshipModel.dart';
-import '../../models/detailsModel.dart';
+
 
 class DetailsPage extends StatefulWidget {
   final SponsorshipModel sponsorDetails;
