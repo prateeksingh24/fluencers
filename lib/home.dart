@@ -2,6 +2,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:fluencers/AppColor.dart';
 import 'package:fluencers/view/screens/home_screen.dart';
+import 'package:fluencers/view/screens/sponsorshipsPage.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomeState extends State<Home> {
 
   List<IconData> iconList = [
     Icons.home,
-    Icons.search,
+    Icons.ssid_chart,
     // Icons.add,
     Icons.notifications,
     Icons.settings,
@@ -72,7 +73,7 @@ class _HomeState extends State<Home> {
       case 0:
         return HomeScreen();
       case 1:
-        return HomeScreen();
+        return SponsorshipsPage();
       case 2:
         return NotificationScreen();
       case 3:
